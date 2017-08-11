@@ -47,4 +47,4 @@ y_test = test['subject']
 predicted_output = poly_svc.predict(x_test)
 
 model_accuracy = metrics.accuracy_score(y_test, predicted_output)
-model_accuracy
+print(model_accuracy)
