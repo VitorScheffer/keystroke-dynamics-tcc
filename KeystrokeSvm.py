@@ -19,9 +19,6 @@ newvalue = dict(zip(unisub, mlist))
 data['subject'] = data['subject'].map(newvalue)
 
 
-# import some data to play with
-
-
 # Divide o conjunto de dados utilizando a proporção 80:20
 train, test = train_test_split(data, test_size = 0.2)
 
@@ -32,10 +29,10 @@ y = train['subject'].values
 
 # we create an instance of SVM and fit out data. We do not scale our
 # data since we want to plot the support vectors
-C = 3  # SVM regularization parameter
+C = 9  # SVM regularization parameter
 #svc = svm.SVC(kernel='linear', C=C).fit(X, y)
 #rbf_svc = svm.SVC(kernel='rbf', C=C).fit(X, y)
-poly_svc = svm.SVC(kernel='poly', degree=3, C=C, gamma=10)
+poly_svc = svm.SVC(kernel='linear', C=C, gamma=1000)
 #lin_svc = svm.LinearSVC(C=C).fit(X, y)
 
 
